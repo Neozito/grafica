@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel da loja - Gráfica do Zoinho</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-site-header></div>
+  <main class="page">
+    <section class="page-banner">
+      <div class="container row-between" style="align-items:flex-start;gap:16px">
+        <div>
+          <h1>Painel da loja</h1>
+          <p>Cadastre produtos com imagem, valor e variáveis.</p>
+        </div>
+        <button class="btn btn-light" type="button" data-admin-logout>Sair</button>
+      </div>
+    </section>
+    <section class="section" style="padding-top:8px">
+      <div class="container admin-grid">
+        <div class="admin-card">
+          <h3>Adicionar produto</h3>
+          <div class="notice">Campo de variáveis: use uma linha por grupo no formato <strong>Material: Vinil branco, Vinil transparente</strong>.</div>
+          <form data-admin-form class="stack">
+            <input class="input" name="nome" placeholder="Nome do produto">
+            <input class="input" name="categoria" placeholder="Categoria">
+            <textarea class="textarea" name="descricao" placeholder="Descrição curta do produto"></textarea>
+            <input class="input" name="preco" type="number" min="0" step="0.01" placeholder="Preço base">
+            <input class="input" name="imagem" placeholder="URL da imagem do produto">
+            <textarea class="textarea" name="variaveis" placeholder="Material: Vinil branco, Vinil transparente&#10;Quantidade: 100 un., 250 un., 500 un."></textarea>
+            <button class="btn btn-primary" type="submit">Salvar produto</button>
+          </form>
+        </div>
+        <div class="admin-card">
+          <h3>Produtos cadastrados</h3>
+          <div class="admin-list" data-admin-product-list></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-site-footer></div>
+  <div data-float-whats></div>
+  <script src="assets/js/products.js"></script>
+</body>
+</html>
